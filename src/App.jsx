@@ -118,9 +118,9 @@ function App() {
         }
 
         try {
-            const forecastUrl = `http://localhost:5000/api/weather/forecast?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}`;
-            const summaryUrl = `http://localhost:5000/api/weather/summary?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}`;
-
+            const backendBaseUrl = 'https://weather-app-backend-xav1.onrender.com';
+            const forecastUrl = `${backendBaseUrl}/api/weather/forecast?latitude=${encodeURIComponent(lat)}}&longitude=${encodeURIComponent(lon)}`;
+            const summaryUrl = `${backendBaseUrl}/api/weather/summary?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}`;
             const forecastResponse = await fetch(forecastUrl);
             if (!forecastResponse.ok) {
                 const errorData = await forecastResponse.json();
